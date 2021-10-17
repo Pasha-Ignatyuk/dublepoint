@@ -1,9 +1,6 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
-from .models import Department, Employee
+from django.shortcuts import render, get_object_or_404
+from .models import Department
 from .forms import DeptForm
-from django.db.models import Avg, F
 
 
 def departments_list(request):
