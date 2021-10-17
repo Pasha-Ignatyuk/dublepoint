@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+<html lang="en">
+<head>
+    <title>{{ department.title }}</title>
+</head>
+<body>
+
+{% block content %}
+<h1 class="text-center">{{ department.title }}</h1>
+{% for employee in employees %}
+    <h1><a href="{% url 'department_detail' pk=department.pk %}">{{ department.title }}</a></h1>
+{% endfor %}
+
+<br><a class="btn btn-default" href="{% url 'add_new_dept' %}">
+    <span class="glyphicon glyphicon-plus"></span>ADD NEW DEPT</a><br>
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+{% block content %}
+<form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Save</button>
+    <br><button onclick="window.history.back();" class="btn btn-default" type="button">Cancel</button></br>
+</form>
+{% endblock %}
+
+</body>
+</html>
