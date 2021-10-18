@@ -1,3 +1,4 @@
+"""url for each view with the corresponding html-template"""
 from django.urls import path
 from . import views
 

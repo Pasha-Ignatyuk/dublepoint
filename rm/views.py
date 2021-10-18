@@ -1,14 +1,17 @@
+"""View - is responsible for displaying information (visualization)"""
 from django.shortcuts import render, get_object_or_404
 from .models import Department
 from .forms import DeptForm
 
 
 def departments_list(request):
+    """Presents a list of all departments on web page"""
     departments = Department.objects.all().order_by('title')
     return render(request, 'main_page.html', {'departments': departments})
 
 
 def add_new_dept(request):
+    """Form for adding a new department"""
     if request.method == "POST":
         form = DeptForm(request.POST)
         if form.is_valid():
@@ -22,6 +25,7 @@ def add_new_dept(request):
     return render(request, 'add_new_dept.html', {'form': form})
 
 
-def department_detail(request, pk):
-    department = get_object_or_404(Department, pk=pk)
+def department_detail(request, department_id):
+    """View for a specific department page. Accepts department's ID """
+    department = get_object_or_404(Department, pk=department_id)
     return render(request, 'department_detail.html', locals())
