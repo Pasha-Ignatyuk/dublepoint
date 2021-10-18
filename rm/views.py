@@ -28,4 +28,4 @@ def add_new_dept(request):
 def department_detail(request, department_id):
     """View for a specific department page. Accepts department's ID """
     department = get_object_or_404(Department, pk=department_id)
-    return render(request, 'department_detail.html', locals())
+    return render(request, 'department_detail.html', {'department': department})
