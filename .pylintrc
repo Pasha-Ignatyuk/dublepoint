@@ -3,9 +3,10 @@
 # Files or directories to be skipped. They should be base names, not paths.
 ignore=CVS, migrations, venv
 
-[IMPORTS]
+[[IMPORTS]
 
-allow-any-import-level
+# List of modules that can be imported at any level, not just the top level one.
+allow-any-import-level=django.core.management
 
 [MESSAGES CONTROL]
 
