@@ -1,0 +1,12 @@
+[MASTER]
+
+# Files or directories to be skipped. They should be base names, not paths.
+ignore=CVS, migrations, venv
+
+[IMPORTS]
+
+allow-any-import-level
+
+[MESSAGES CONTROL]
+
+disable=R0903
