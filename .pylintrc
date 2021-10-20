@@ -1,9 +1,11 @@
 [MASTER]
 
 # Files or directories to be skipped. They should be base names, not paths.
-ignore=CVS, migrations, venv
+ignore=CVS, migrations, venv, 0001_initial
 
-[[IMPORTS]
+init-hook="from pylint.config import find_pylintrc; import os, sys; sys.path.append(os.path.dirname(find_pylintrc()))"
+
+[IMPORTS]
 
 # List of modules that can be imported at any level, not just the top level one.
 allow-any-import-level=django.core.management
