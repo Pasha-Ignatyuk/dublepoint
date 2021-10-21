@@ -7,7 +7,6 @@ init-hook='sys.path = [
 "usr/venv/bin/python3",
 "usr/venv/bin/python3/lib-dynload",
 "home/ceo/Документы/doublepoint/venv/lib/python3.8/site-packages/",
-
 ]'
 
 [IMPORTS]
