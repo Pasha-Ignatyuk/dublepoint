@@ -23,8 +23,8 @@
        }
     </style>
     <ul class="hr">
-        <li><a href="{% url 'employee_detail' id=employee.id %}">{{ employee.id  }}</a></li>
-         <li>{{ employee.name }}</li>
+        <li><a href="{% url 'employee_detail' empl_id=employee.id %}">{{ employee.id  }}</a></li>
+        <li>{{ employee.name }}</li>
         <li>{{ employee.surname }}</li>
         <li>{{ employee.birthday }}</li>
         <li>{{ employee.salary}}</li>

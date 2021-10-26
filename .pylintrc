@@ -12,4 +12,4 @@ allow-any-import-level=django.core.management
 
 [MESSAGES CONTROL]
 
-disable=R0903, E0401, C0415
+disable=R0903, E0401, C0415, C0103, C0301

@@ -5,7 +5,29 @@
     <title>Employee's detail</title>
 </head>
 <body>
+{% block content %}
+
 <h1 class="text-center">Employee's data</h1>
+
+<style>
+   ul.hr {
+    margin: 0; /* Обнуляем значение отступов */
+    padding: 4px; /* Значение полей */
+   }
+   ul.hr li {
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 5px; /* Отступ слева */
+    padding: 3px; /* Поля вокруг текста */
+   }
+</style>
+<ul class="hr">
+    <li>{{ employee.name }}</li>
+    <li>{{ employee.surname }}</li>
+    <li>{{ employee.birthday }}</li>
+    <li>{{ employee.salary}}</li>
+</ul>
+
+{% endblock %}
 
 </form>
 </body>

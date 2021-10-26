@@ -25,14 +25,14 @@ def add_new_dept(request):
     return render(request, 'add_new_dept.html', {'form': form})
 
 
-def department_detail(request, id):
+def department_detail(request, dept_id):
     """View for a specific department page. Accepts department's ID """
-    deptartment = get_object_or_404(Department, id=id)
-    employee = Employee.objects.filter(department__id=id)
+    deptartment = get_object_or_404(Department, id=dept_id)
+    employee = Employee.objects.filter(department__id=dept_id)
     return render(request, 'department_detail.html', {'deptartment': deptartment, 'employee': employee})
 
 
-def employee_detail(request, id):
+def employee_detail(request, empl_id):
     """View for a specific employee page. Accepts employee's ID """
-    employee = get_object_or_404(Employee, id=id)
+    employee = get_object_or_404(Employee, id=empl_id)
     return render(request, 'employee_detail.html', {'employee': employee})
