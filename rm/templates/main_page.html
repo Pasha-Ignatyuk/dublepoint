@@ -9,7 +9,7 @@
 {% block content %}
 <h1 class="text-center">Human resource management</h1>
 {% for department in departments %}
-        <h1><a href="{% url 'department_detail' pk=department.pk %}">{{ department.title }}</a>{{department.average_salary}}</h1>
+    <h1><a href="{% url 'department_detail' id=department.id %}">{{ department.title }}</a>{{department.average_salary}}</h1>
 {% endfor %}
 
 <br><a class="btn btn-default" href="{% url 'add_new_dept' %}">

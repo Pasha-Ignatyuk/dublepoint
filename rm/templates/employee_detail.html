@@ -1,39 +1,12 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css"
-          integrity="sha512-Dop/vW3iOtayerlYAqCgkVr2aTr2ErwwTYOvRFUpzl2VhCMJyjQF0Q9TjUXIo6JhuM/3i0vVEt2e/7QQmnHQqw=="
-          crossorigin="anonymous">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap-theme.min.css"
-          integrity="sha512-iy8EXLW01a00b26BaqJWaCmk9fJ4PsMdgNRqV96KwMPSH+blO82OHzisF/zQbRIIi8m0PiO10dpS0QxrcXsisw=="
-          crossorigin="anonymous">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-            crossorigin="anonymous"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"
-            integrity="sha512-oBTprMeNEKCnqfuqKd6sbvFzmFQtlXS3e0C/RGFV0hD6QzhHV+ODfaQbAlmY6/q0ubbwlAM/nCJjkrgA3waLzg=="
-            crossorigin="anonymous"></script>
-    <title>employee_detail</title>
+    <title>Employee's detail</title>
 </head>
 <body>
 <h1 class="text-center">Employee's data</h1>
-<form method="POST" class="post-form">
-    <br><label>First name<input type="text"></label></br>
-    <br><label>Last name<input type="text"></label></br>
-    <br><label>Department<input type="text"></label></br>
-    <br><label>Date of birth<input type="text"></label></br>
-    <br><label>Salary<input type="text"></label></br>
-    <br>
-    <button type="submit" class="save btn btn-default" href="{% url 'main_page' %}">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-             class="bi bi-check-lg" viewBox="0 0 16 16">
-            <path d="M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473
-                1.473 0 0 1 2.084-2.083l4.111 4.112 6.82-8.69a.486.486 0 0 1 .04-.045z"/>
-        </svg>SAVE</button>
-    </br>
-    <br><button type="cancel" class="btn btn-default" href="{% url 'main_page' %}">Cancel</button></br>
+
 </form>
 </body>
 </html>
