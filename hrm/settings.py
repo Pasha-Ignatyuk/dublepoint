@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+import psycopg2.extensions
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -76,9 +77,16 @@ WSGI_APPLICATION = 'hrm.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'hrm_db',
+        'USER' : 'ceo',
+        'PASSWORD' : 'canton',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    },
+    'OPTIONS': {
+        'isolation_level': psycopg2.extensions.ISOLATION_LEVEL_SERIALIZABLE,
+    },
 }
 
 

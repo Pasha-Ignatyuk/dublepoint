@@ -7,13 +7,33 @@
 <body>
 
 {% block content %}
-<h1 class="text-center">{{ department.title }}</h1>
-{% for employee in employees %}
-    <h1><a href="{% url 'department_detail' pk=department.pk %}">{{ department.title }}</a></h1>
+
+<h1 class="text-center">{{ deptartment.title }}</h1>
+<h1>Employees:</h1>
+{% for employee in employee %}
+    <style>
+       ul.hr {
+        margin: 0; /* Обнуляем значение отступов */
+        padding: 4px; /* Значение полей */
+       }
+       ul.hr li {
+        display: inline; /* Отображать как строчный элемент */
+        margin-right: 5px; /* Отступ слева */
+        padding: 3px; /* Поля вокруг текста */
+       }
+    </style>
+    <ul class="hr">
+        <li><a href="{% url 'employee_detail' empl_id=employee.id %}">{{ employee.id  }}</a></li>
+        <li>{{ employee.name }}</li>
+        <li>{{ employee.surname }}</li>
+        <li>{{ employee.birthday }}</li>
+        <li>{{ employee.salary}}</li>
+    </ul>
+
 {% endfor %}
 
-<br><a class="btn btn-default" href="{% url 'add_new_dept' %}">
-    <span class="glyphicon glyphicon-plus"></span>ADD NEW DEPT</a><br>
+<!--<br><a class="btn btn-default" href="{% url 'add_new_dept' %}">-->
+<!--    <span class="glyphicon glyphicon-plus"></span>ADD NEW DEPT</a><br>-->
 {% endblock %}
 
 </body>

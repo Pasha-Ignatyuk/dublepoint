@@ -17,7 +17,7 @@ class Department(models.Model):
         average_salary = Employee.objects.filter(department=self).aggregate(Avg('salary'))
         if average_salary['salary__avg'] is None:
             return 'not applicable'
-        return average_salary['salary__avg']
+        return round(average_salary['salary__avg'], 2)
 
 
 class Employee(models.Model):
@@ -26,7 +26,7 @@ class Employee(models.Model):
     name = models.CharField(max_length=50)
     surname = models.CharField(max_length=50)
     birthday = models.DateField()
-    salary = models.DecimalField(max_digits=10, decimal_places=2)
+    salary = models.DecimalField(max_digits=7, decimal_places=2)
 
     def __str__(self):
         """string representation of an Employee class object """
