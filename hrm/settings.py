@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'hrm_db',
         'USER': 'ceo',
         'PASSWORD': 'canton',
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '5432',
     },
     'OPTIONS': {
