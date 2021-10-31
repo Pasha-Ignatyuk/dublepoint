@@ -1,6 +1,6 @@
 name: Django CI
 
-on: [pull_request_review]
+on: [fork]
 
 jobs:
   build:
