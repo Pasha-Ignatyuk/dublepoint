@@ -1,5 +1,5 @@
 [run]
-source = pkgname,doublepoint
+source = doublepoint
 [report]
 omit = */migrations/*
 exclude_lines =
