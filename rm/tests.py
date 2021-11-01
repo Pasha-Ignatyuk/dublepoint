@@ -17,7 +17,7 @@ class HRMTestCase(TestCase):
     def setUp(self):
         """Method called to prepare the test fixture. This is called immediately before calling the test method.
         Preliminary creation of objects of classes Department and Employee for subsequent testing"""
-        self.user = User.objects.create(username='testuser', password='password')
+        self.user = User.objects.create(username='testuser')
         self.department = Department.objects.create(title="Test department")
         self.employee = Employee.objects.create(department=self.department, name="Konstantin", surname="Konstantinov",
                                                 birthday=datetime.date(1982, 12, 14), salary=Decimal('10000.00'))
