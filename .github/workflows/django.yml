@@ -12,10 +12,11 @@ jobs:
       # Label used to access the service container
       postgres:
         # Docker Hub image
-        image: postgres
+        image: postgres:12
         # Provide the password for postgres
         env:
           POSTGRES_PASSWORD: canton
+          POSTGRES_DB: hrm_db
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
