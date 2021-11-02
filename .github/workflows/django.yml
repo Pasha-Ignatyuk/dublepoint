@@ -1,11 +1,32 @@
 name: Django CI
 
-on: [fork]
+on: [push]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
+
+    # Service containers to run with `runner-job`
+    services:
+      # Label used to access the service container
+      postgres:
+        # Docker Hub image
+        image: postgres:12
+        # Provide the password for postgres
+        env:
+          POSTGRES_USER: ceo
+          POSTGRES_PASSWORD: canton
+          POSTGRES_DB: hrm_db
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          # Maps tcp port 5432 on service container to the host
+          - 5432:5432
 
     steps:
     - uses: actions/checkout@v2
@@ -20,3 +41,20 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
+      env:
+        POSTGRES_HOST:
+        POSTGRES_PORT: 5432
+
+    - name: Coveralls
+      uses: AndreMiras/coveralls-python-action@develop
+      with:
+        parallel: true
+
+  coveralls_finish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Coveralls Finished
+      uses: AndreMiras/coveralls-python-action@develop
+      with:
+        parallel-finished: true
