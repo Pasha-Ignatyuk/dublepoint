@@ -49,3 +49,4 @@ jobs:
       uses: coverallsapp/github-action@1.1.3
       with:
         github-token: ${{ secrets.MY_TOKEN }}
+        path--to-lcov: ./htmlcov/coverage_html.js
