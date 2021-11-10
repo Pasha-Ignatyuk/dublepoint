@@ -14,8 +14,8 @@ from pathlib import Path
 import psycopg2.extensions
 from django.apps import AppConfig
 
-AppConfig.default = False
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hrm.settings")
+# AppConfig.default = False
+# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hrm.settings")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
