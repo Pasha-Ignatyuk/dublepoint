@@ -15,9 +15,9 @@ jobs:
         image: postgres:12
         # Provide the password for postgres
         env:
-          POSTGRES_USER: os.environ.get('DB_USER')
-          POSTGRES_PASSWORD: os.environ.get('DB_PASSWORD')
-          POSTGRES_DB: os.environ.get('DB_NAME')
+          POSTGRES_USER: ${{ secrets.DB_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          POSTGRES_DB: ${{ secrets.DB_NAME }}
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
