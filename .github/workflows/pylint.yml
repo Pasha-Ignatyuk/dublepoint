@@ -21,6 +21,7 @@ jobs:
       run: |
         pylint --load-plugins pylint_django rm
         env:
+          DJANGO_SETTINGS_MODULE=hrm.settings
           SECRET_KEY=${{ secrets.SECRET_KEY }}
           DB_USER=${{ secrets.DB_USER }}
           DB_PASSWORD=${{ secrets.DB_PASSWORD }}
