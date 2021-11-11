@@ -19,8 +19,8 @@ jobs:
         pip install -r requirements.txt
     - name: Analysing the code with pylint
       run: |
-        export SECRET_KEY=${{ secrets.SECRET_KEY }}
-        export DB_USER=${{ secrets.DB_USER }}
-        export DB_PASSWORD=${{ secrets.DB_PASSWORD }}
-        export DB_NAME=${{ secrets.DB_NAME }}
+        echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> $GITHUB_ENV
+        echo DB_USER=${{ secrets.DB_USER }} >> $GITHUB_ENV
+        echo DB_PASSWORD=${{ secrets.DB_PASSWORD }} >> $GITHUB_ENV
+        echo DB_NAME=${{ secrets.DB_NAME }} >> $GITHUB_ENV
         pylint --load-plugins pylint_django rm
