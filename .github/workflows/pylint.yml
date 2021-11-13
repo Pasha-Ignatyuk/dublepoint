@@ -19,9 +19,8 @@ jobs:
         pip install -r requirements.txt
     - name: Analysing the code with pylint
       run: |
-        pylint --load-plugins pylint_django rm
+        pylint --load-plugins pylint_django --django-settings-module=hrm.settings rm
         env:
-          DJANGO_SETTINGS_MODULE=hrm.settings
           SECRET_KEY=${{ secrets.SECRET_KEY }}
           DB_USER=${{ secrets.DB_USER }}
           DB_PASSWORD=${{ secrets.DB_PASSWORD }}
