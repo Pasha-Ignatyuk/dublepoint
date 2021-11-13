@@ -15,9 +15,9 @@ jobs:
         image: postgres:12
         # Provide the password for postgres
         env:
-          POSTGRES_USER: ${{ secrets.DATABASE_USER }}
-          POSTGRES_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
-          POSTGRES_DB: ${{ secrets.DATABASE_NAME }}
+          POSTGRES_USER: ${{ secrets.DB_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          POSTGRES_DB: ${{ secrets.DB_NAME }}
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
@@ -41,6 +41,9 @@ jobs:
     - name: Run Tests
       run: |
         export SECRET_KEY="0-42!#@*6jqo)lv^+@-+&(-@kjke@xzk%)1!w)vz-1uwk71p)="
+        export DB_USER=${{ secrets.DB_USER }}
+        export DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+        export DB_NAME=${{ secrets.DB_NAME }}
         python manage.py test
       env:
         POSTGRES_HOST:
