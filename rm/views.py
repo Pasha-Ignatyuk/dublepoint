@@ -29,7 +29,8 @@ def department_detail(request, dept_id):
     """View for a specific department page. Accepts department's ID """
     deptartment = get_object_or_404(Department, id=dept_id)
     employee = Employee.objects.filter(department__id=dept_id)
-    return render(request, 'department_detail.html', {'deptartment': deptartment, 'employee': employee})
+    return render(request, 'department_detail.html', {'deptartment': deptartment,
+                                                      'employee': employee})
 
 
 def employee_detail(request, empl_id):
